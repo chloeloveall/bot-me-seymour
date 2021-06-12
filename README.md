@@ -103,6 +103,7 @@ Contributions are what make the open source community such an amazing place to b
 - [Discord](https://discord.com/)
 - [discord.js.org](https://discord.js.org/)
 - [Shields](https://shields.io/)
+- [Carnivorous Plant Vector by Vecteezy](<https://www.vecteezy.com/free-vector/carnivorous-plant)
 
 ## Contact Information
 
