@@ -46,14 +46,14 @@ client.on('message', async (message) => {
         message.channel.send('User was banned successfully.');
       } catch (err) {
         message.channel.send(
-          'An error occured. Either I do not have permissions or the user was not found.'
+          'An error occurred. Either I do not have permissions or the user was not found.'
         );
       }
     }
   }
 });
 
-// new event to listen for roles
+// new event to listen for adding roles
 client.on('messageReactionAdd', (reaction, user) => {
   const { name } = reaction.emoji;
   const member = reaction.message.guild.members.cache.get(user.id);
@@ -70,6 +70,28 @@ client.on('messageReactionAdd', (reaction, user) => {
         break;
       case '🍂':
         member.roles.add('853483772154871819');
+        break;
+    }
+  }
+});
+
+// new event to listen for removing roles
+client.on('messageReactionRemove', (reaction, user) => {
+  const { name } = reaction.emoji;
+  const member = reaction.message.guild.members.cache.get(user.id);
+  if (reaction.message.id === '853483986936135703') {
+    switch (name) {
+      case '🌨️':
+        member.roles.remove('853482490605862962');
+        break;
+      case '☀️':
+        member.roles.remove('853482497644167190');
+        break;
+      case '🌱':
+        member.roles.remove('853483664511205435');
+        break;
+      case '🍂':
+        member.roles.remove('853483772154871819');
         break;
     }
   }
