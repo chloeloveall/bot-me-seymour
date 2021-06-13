@@ -100,7 +100,7 @@ Contributions are what make the open source community such an amazing place to b
 
 - [Choose an open source license](https://choosealicense.com/)
 - [Create a Discord Bot With Node.js](https://www.youtube.com/watch?v=BmKXBVdEV0g&t=397s)
-- [Discord](https://discord.com/)
+- [Discord Developer Portal](https://discord.com/developers/docs/intro)
 - [discord.js.org](https://discord.js.org/)
 - [Shields](https://shields.io/)
 - [Carnivorous Plant Vector by Vecteezy](https://www.vecteezy.com/free-vector/carnivorous-plant)
