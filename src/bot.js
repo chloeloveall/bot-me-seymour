@@ -4,7 +4,9 @@ require('dotenv').config();
 const { Client } = require('discord.js');
 
 // creates an instance of Client class
-const client = new Client();
+const client = new Client({
+  partials: ['MESSAGE', 'REACTION'],
+});
 const PREFIX = '$';
 
 // callback function parameter is how we handle the event
@@ -47,6 +49,28 @@ client.on('message', async (message) => {
           'An error occured. Either I do not have permissions or the user was not found.'
         );
       }
+    }
+  }
+});
+
+// new event to listen for roles
+client.on('messageReactionAdd', (reaction, user) => {
+  const { name } = reaction.emoji;
+  const member = reaction.message.guild.members.cache.get(user.id);
+  if (reaction.message.id === '853483986936135703') {
+    switch (name) {
+      case '🌨️':
+        member.roles.add('853482490605862962');
+        break;
+      case '☀️':
+        member.roles.add('853482497644167190');
+        break;
+      case '🌱':
+        member.roles.add('853483664511205435');
+        break;
+      case '🍂':
+        member.roles.add('853483772154871819');
+        break;
     }
   }
 });
