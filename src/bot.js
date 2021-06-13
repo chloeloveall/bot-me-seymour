@@ -55,6 +55,9 @@ client.on('message', async (message) => {
           'An error occurred. Either I do not have permissions or the user was not found.'
         );
       }
+    } else if (CMD_NAME === 'announce') {
+      const msg = args.join(' ');
+      webhookClient.send(msg);
     }
   }
 });
