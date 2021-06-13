@@ -1,12 +1,18 @@
 require('dotenv').config();
 
 // Client is the class that allows us to interact with the Discord API
-const { Client } = require('discord.js');
+const { Client, WebhookClient } = require('discord.js');
 
 // creates an instance of Client class
 const client = new Client({
   partials: ['MESSAGE', 'REACTION'],
 });
+
+const webhookClient = new WebhookClient(
+  process.env.WEBHOOK_ID,
+  process.env.WEBHOOK_TOKEN,
+);
+
 const PREFIX = '$';
 
 // callback function parameter is how we handle the event
