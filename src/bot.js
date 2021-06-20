@@ -21,6 +21,34 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
+  const facts = [
+    'plant fact 1',
+    'plant fact 2',
+    'plant fact 3',
+    'plant fact 4',
+    'plant fact 5',
+    'plant fact 6',
+    'plant fact 7',
+    'plant fact 8',
+    'plant fact 9',
+    'plant fact 10',
+    'plant fact 11',
+    'plant fact 12',
+    'plant fact 13',
+    'plant fact 14',
+    'plant fact 15',
+    'plant fact 16',
+    'plant fact 17',
+    'plant fact 18',
+    'plant fact 19',
+    'plant fact 20',
+    'plant fact 21',
+    'plant fact 22',
+    'plant fact 23',
+    'plant fact 24',
+    'plant fact 25',
+  ];
+
   if (message.author.bot) return;
   if (message.content.startsWith(PREFIX)) {
     const [CMD_NAME, ...args] = message.content
@@ -58,6 +86,10 @@ client.on('message', async (message) => {
     } else if (CMD_NAME === 'announce') {
       const msg = args.join(' ');
       webhookClient.send(msg);
+    } else if (CMD_NAME === 'fact') {
+      const randomNum = Math.floor(Math.random() * facts.length);
+      const fact = facts[randomNum];
+      return message.reply(fact);
     }
   }
 });
