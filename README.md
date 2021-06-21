@@ -29,16 +29,35 @@
 
 ## Description
 
-Days eleven and twelve of #100daysofcode.
+Days eleven and twelve of #100daysofcode. A plant themed Discord bot!
 
 ## Technologies Used
 
 - Discord.js
 - Heroku
 - JavaScript
-- Node.js
+- node.js
+- Nodemon
+
+## Use Bot Me, Seymour!
+
+To use Bot Me, Seymour! on your Discord server:
+
+- Follow [this link](https://discord.com/oauth2/authorize?client_id=853026935978590218&permissions=0&scope=bot).
+- Select the server from the dropdown list.
+- Click `Continue`.
+- Click `Authorize`.
+
+### Bot Commands
+
+- To receive a random plant fact: `$fact`
+- To kick a user from the server: `$kick + space + user ID`
+- To ban a user from the server: `ban + space + user ID`
+- To make an announcement: `$announce + space + [Your message]`
 
 ## Setup and Installation Requirements
+
+Follow these steps if you wish to alter or deploy the Discord bot yourself.
 
 ### Prior to Installation
 
@@ -73,6 +92,45 @@ Days eleven and twelve of #100daysofcode.
 - Open [VSCode], or your code editor of choice
 - Select `File>Open...` and navigate to the unzipped file folder
 - Select `bot-me-seymour` and click `open` to view the project
+
+### Environment Variables & Security
+
+#### Obtain Bot Token & Application ID
+
+- Navigate to the [Discord Developers Portal](https://discord.com/developers/applications)
+  - Select `New Application`
+  - Name your application
+  - Click `Create`
+  - Under Settings, select `Bot`
+  - Click `Add Bot`
+  - Click `Yes do it!`
+  - Record the Bot token and application ID
+
+#### Obtain Webhook Token
+
+From the Discord server:
+
+- Select `Server Settings`
+- Select `Integrations`
+- Select `View Webhooks`
+- Select `New Webhook`
+- Select `Copy Webhook URL`
+- Paste the URL in the browser
+- Record the token value
+
+#### Setup .env
+
+- Create a .env file in the root directory of the project.
+- Add the following code to the .env file:  
+  `DISCORDJS_BOT_TOKEN=[YOUR_BOT_TOKEN_HERE]`  
+  `WEBHOOK_ID=[YOUR_APPLICATION_ID_HERE]`  
+  `WEBHOOK_TOKEN=[YOUR_WEBHOOK_TOKEN_HERE]`
+
+### Launch Application
+
+- To install: Run `npm install`
+- To run in development: `npm run dev`
+- To run: `npm start`
 
 ## Known Bugs
 
