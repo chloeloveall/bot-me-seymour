@@ -29,7 +29,7 @@
 
 ## Description
 
-Days eleven and twelve of #100daysofcode. A plant themed Discord bot!
+Days eleven and twelve of #100daysofcode. A plant themed Discord bot! The Discord bot shares random plant facts, can kick and ban users, can assign user roles, and can make announcements. Deployed via Heroku with a worker dyno.
 
 ## Technologies Used
 
@@ -48,12 +48,16 @@ To use Bot Me, Seymour! on your Discord server:
 - Click `Continue`.
 - Click `Authorize`.
 
+**_Adding user roles via the bot will only be possible if you download and make adjustments to the message and role IDs_**
+
 ### Bot Commands
 
 - To receive a random plant fact: `$fact`
 - To kick a user from the server: `$kick + space + user ID`
 - To ban a user from the server: `ban + space + user ID`
 - To make an announcement: `$announce + space + [Your message]`
+
+![Discord bot facts](src/assets/images/bot-use-example.png)
 
 ## Setup and Installation Requirements
 
