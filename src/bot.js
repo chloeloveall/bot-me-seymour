@@ -129,7 +129,7 @@ client.on('message', async (message) => {
     } else if (CMD_NAME === 'fact') {
       const randomNum = Math.floor(Math.random() * facts.length);
       const fact = facts[randomNum];
-      return message.reply(fact);
+      return message.channel.send(fact);
     }
   }
 });
