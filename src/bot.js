@@ -10,7 +10,7 @@ const client = new Client({
 
 const webhookClient = new WebhookClient(
   process.env.WEBHOOK_ID,
-  process.env.WEBHOOK_TOKEN,
+  process.env.WEBHOOK_TOKEN
 );
 
 const PREFIX = '$';
@@ -138,19 +138,26 @@ client.on('message', async (message) => {
 client.on('messageReactionAdd', (reaction, user) => {
   const { name } = reaction.emoji;
   const member = reaction.message.guild.members.cache.get(user.id);
-  if (reaction.message.id === '853483986936135703') {
+  if (
+    reaction.message.id === '853483986936135703' ||
+    reaction.message.id === '856358583523475456'
+  ) {
     switch (name) {
       case '🌨️':
         member.roles.add('853482490605862962');
+        member.roles.add('856359000709791745');
         break;
       case '☀️':
         member.roles.add('853482497644167190');
+        member.roles.add('856358926521991168');
         break;
       case '🌱':
         member.roles.add('853483664511205435');
+        member.roles.add('856358851175120926');
         break;
       case '🍂':
         member.roles.add('853483772154871819');
+        member.roles.add('856358962298486845');
         break;
     }
   }
@@ -160,19 +167,26 @@ client.on('messageReactionAdd', (reaction, user) => {
 client.on('messageReactionRemove', (reaction, user) => {
   const { name } = reaction.emoji;
   const member = reaction.message.guild.members.cache.get(user.id);
-  if (reaction.message.id === '853483986936135703') {
+  if (
+    reaction.message.id === '853483986936135703' ||
+    reaction.message.id === '856358583523475456'
+  ) {
     switch (name) {
       case '🌨️':
         member.roles.remove('853482490605862962');
+        member.roles.remove('856359000709791745');
         break;
       case '☀️':
         member.roles.remove('853482497644167190');
+        member.roles.remove('856358926521991168');
         break;
       case '🌱':
         member.roles.remove('853483664511205435');
+        member.roles.remove('856358851175120926');
         break;
       case '🍂':
         member.roles.remove('853483772154871819');
+        member.roles.remove('856358962298486845');
         break;
     }
   }
