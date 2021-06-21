@@ -34,6 +34,7 @@ Days eleven and twelve of #100daysofcode.
 ## Technologies Used
 
 - Discord.js
+- Heroku
 - JavaScript
 - Node.js
 
@@ -112,6 +113,3 @@ _Chloe Loveall <chloeloveall@protonmail.com>_
 ![github followers](https://img.shields.io/github/followers/chloeloveall?style=social) &nbsp; ![github forks](https://img.shields.io/github/forks/chloeloveall/bot-me-seymour?label=Forks&style=social) &nbsp; ![github stars](https://img.shields.io/github/stars/chloeloveall/bot-me-seymour?style=social)
 
 [Back to Top](#table-of-contents)
-
-deploy to heroku
-https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku
