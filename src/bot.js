@@ -21,6 +21,22 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
+  const randomNum = Math.floor(Math.random() * facts.length);
+  
+  const images = [
+    "https://source.unsplash.com/random/?houseplant",
+    "https://source.unsplash.com/random/?houseplants",
+    "https://source.unsplash.com/random/?plants",
+    "https://source.unsplash.com/random/?succulent",
+    "https://source.unsplash.com/random/?philodendron",
+    "https://source.unsplash.com/random/?forest",
+    "https://source.unsplash.com/random/?tree",
+    "https://source.unsplash.com/random/?trees",
+    "https://source.unsplash.com/random/?cactus",
+    "https://source.unsplash.com/random/?succulents",
+    "https://source.unsplash.com/random/?succulent",
+  ];
+
   const facts = [
     'Plant are pretty fuckin cool.',
     'Most carnivorous plants are found in areas with low soil nutrition.',
@@ -127,13 +143,14 @@ client.on('message', async (message) => {
       const msg = args.join(' ');
       webhookClient.send(msg);
     } else if (CMD_NAME === 'fact') {
-      const randomNum = Math.floor(Math.random() * facts.length);
+      // const randomNum = Math.floor(Math.random() * facts.length);
       const fact = facts[randomNum];
       return message.channel.send(fact);
     } else if (CMD_NAME === 'pic') {
+      let imgUrl = images[randomNum];
       const embed = {
         "image": {
-          "url": "https://source.unsplash.com/random/?houseplant"
+          "url": imgUrl
         }
       };
       message.channel.send({ embed });
