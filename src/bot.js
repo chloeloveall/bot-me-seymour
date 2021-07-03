@@ -213,7 +213,7 @@ client.on('message', async (message) => {
       return message.channel.send(fact);
     } else if (CMD_NAME === 'pic') {
       if (args.length === 0) return message.reply('Please provide a search term');
-      const image = message.get(args[0]);
+      const image = args[0];
       // const randomNum = Math.floor(Math.random() * images.length);
       // const image = images[randomNum];
       const embed = {
