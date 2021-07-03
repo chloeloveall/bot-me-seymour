@@ -218,14 +218,17 @@ client.on('message', async (message) => {
     } else if (CMD_NAME === 'help') {
       const embed = {
         "title": "List of available Bot Me, Seymour! commands:",
-        "content": "$kick + space + member ID: kicks selected member from the server (this command is only available to admins)",
-        "content": "$ban + + space + member ID: bans selected member from the server (this command is only available to admins)",
-        "content": "$pic + space + search term: searches for an image that matches the search term",
-        "content": "$plantpic: generates a random plant image",
-        "content": "$fact: generates a random plant fact",
-        "content": "$announce + space + message: announces the message"
+        "description": "```\n$kick + space + member ID: kicks selected member from the server (this command is only available to admins) \n$ban + + space + member ID: bans selected member from the server (this command is only available to admins) \n$pic + space + search term: searches for an image that matches the search term \n$plantpic: generates a random plant image \n$fact: generates a random plant fact \n$announce + space + message: announces the message ```"
       };
-      message.channel.send({ embed });
+      // const embed = {
+      //   "content": "$kick + space + member ID: kicks selected member from the server (this command is only available to admins)",
+      //   "content": "$ban + + space + member ID: bans selected member from the server (this command is only available to admins)",
+      //   "content": "$pic + space + search term: searches for an image that matches the search term",
+      //   "content": "$plantpic: generates a random plant image",
+      //   "content": "$fact: generates a random plant fact",
+      //   "content": "$announce + space + message: announces the message"
+      // };
+      // message.channel.send({ embed });
     } 
   }
 });
