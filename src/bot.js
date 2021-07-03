@@ -217,14 +217,14 @@ client.on('message', async (message) => {
       message.channel.send({ embed });
     } else if (CMD_NAME === 'help') {
       const embedHelp = {
-        "commands": {
+        "embed": {
           "title": "List of available Bot Me, Seymour! commands:",
           "kick": "$kick + space + member ID: kicks selected member from the server (this command is only available to admins)",
           "ban": "$ban + + space + member ID: bans selected member from the server (this command is only available to admins)",
           "pic": "$pic + space + search term: searches for an image that matches the search term",
           "plantpic": "$plantpic: generates a random plant image",
           "fact": "$fact: generates a random plant fact",
-          "annouce": "$announce + space + message: announces the message"
+          "announce": "$announce + space + message: announces the message"
         }
       };
       message.channel.send({ embedHelp });
