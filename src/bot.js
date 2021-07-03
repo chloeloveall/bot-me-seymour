@@ -150,7 +150,7 @@ client.on('message', async (message) => {
       let imgUrl = images[randomNum];
       const embed = {
         "image": {
-          "url": imgUrl
+          "url": `${imgUrl}`
         }
       };
       message.channel.send({ embed });
