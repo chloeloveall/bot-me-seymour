@@ -215,7 +215,20 @@ client.on('message', async (message) => {
         }
       };
       message.channel.send({ embed });
-    }
+    } else if (CMD_NAME === 'help') {
+      message.channel.send(
+        ```
+        Bot Me, Seymour! available commands:
+
+        $kick + space + member ID: kicks selected member from the server (this command is only available to admins)
+        $ban + + space + member ID: bans selected member from the server (this command is only available to admins)
+        $pic + space + search term: searches for an image that matches the search term 
+        $plantpic: generates a random plant image
+        $fact: generates a random plant fact
+        $announce + space + message: announces the message
+        ```
+      );
+    } 
   }
 });
 
