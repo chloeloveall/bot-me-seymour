@@ -139,7 +139,7 @@ client.on('message', async (message) => {
       const fact = facts[randomNum];
       return message.channel.send(fact);
     } else if (CMD_NAME === 'pic') {
-      message.channel.send({ files: [file], embed: exampleEmbed });
+      return message.channel.send({ files: [file], embed: exampleEmbed });
     }
   }
 });
