@@ -89,11 +89,6 @@ client.on('message', async (message) => {
     'Older Douglas Fir trees can transport their extra food to younger trees through mycelia, a type of fungus plants use to communicate and share resources with each other.',
   ];
 
-  const exampleEmbed = client.MessageEmbed()
-    .setTitle('Some title')
-    .attachFiles(['../assets/images/bot-icon.jpg'])
-    .setImage('attachment://dbot-icon.jpg');
-
   if (message.author.bot) return;
   if (message.content.startsWith(PREFIX)) {
     const [CMD_NAME, ...args] = message.content
@@ -135,12 +130,7 @@ client.on('message', async (message) => {
       const randomNum = Math.floor(Math.random() * facts.length);
       const fact = facts[randomNum];
       return message.channel.send(fact);
-    } else if (CMD_NAME === 'pic') {
-      message.channel.send(exampleEmbed);
-      // const randomNum = Math.floor(Math.random() * facts.length);
-      // const fact = facts[randomNum];
-      // return message.channel.send(fact);
-    } 
+    }
   }
 });
 
