@@ -21,86 +21,72 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
-  // const images = [
-  //   "https://source.unsplash.com/random/?houseplant",
-  //   "https://source.unsplash.com/random/?houseplants",
-  //   "https://source.unsplash.com/random/?plants",
-  //   "https://source.unsplash.com/random/?succulent",
-  //   "https://source.unsplash.com/random/?philodendron",
-  //   "https://source.unsplash.com/random/?forest",
-  //   "https://source.unsplash.com/random/?tree",
-  //   "https://source.unsplash.com/random/?trees",
-  //   "https://source.unsplash.com/random/?cactus",
-  //   "https://source.unsplash.com/random/?succulents",
-  //   "https://source.unsplash.com/random/?succulent",
-  // ];
-
-  // const images = [
-  //   "houseplant",
-  //   "houseplants",
-  //   "plants",
-  //   "succulent",
-  //   "philodendron",
-  //   "forest",
-  //   "tree",
-  //   "trees",
-  //   "cactus",
-  //   "succulents",
-  //   "succulent",
-  //   "indoorplant",
-  //   "indoorplants",
-  //   "flower",
-  //   "blossom",
-  //   "flowers",
-  //   "blossoms",
-  //   "cacti",
-  //   "aloe",
-  //   "flora",
-  //   "spring",
-  //   "plantpot",
-  //   "sprout",
-  //   "garden",
-  //   "pottedplant",
-  //   "pottedplants",
-  //   "seedling",
-  //   "seedlings",
-  //   "seed",
-  //   "vegetable",
-  //   "vegetables",
-  //   "acorn",
-  //   "fruit",
-  //   "orchid",
-  //   "orchids",
-  //   "rose",
-  //   "roses",
-  //   "sunflower",
-  //   "caladium",
-  //   "sunflowers",
-  //   "aloevera",
-  //   "bloomscape",
-  //   "thesill",
-  //   "alocasia",
-  //   "peperomia",
-  //   "monstera",
-  //   "greenhouse",
-  //   "sansevieria",
-  //   "feey",
-  //   "begonia",
-  //   "dracaena",
-  //   "croton",
-  //   "anthurium",
-  //   "fern",
-  //   "zinnia",
-  //   "syngonium",
-  //   "violets",
-  //   "tulips",
-  //   "thistle",
-  //   "lithops",
-  //   "tulips",
-  //   "coleus",
-  //   "ficus",
-  //   "calathea",
-  // ];
+  const images = [
+    "houseplant",
+    "houseplants",
+    "plants",
+    "succulent",
+    "philodendron",
+    "forest",
+    "tree",
+    "trees",
+    "cactus",
+    "succulents",
+    "succulent",
+    "indoorplant",
+    "indoorplants",
+    "flower",
+    "blossom",
+    "flowers",
+    "blossoms",
+    "cacti",
+    "aloe",
+    "flora",
+    "spring",
+    "plantpot",
+    "sprout",
+    "garden",
+    "pottedplant",
+    "pottedplants",
+    "seedling",
+    "seedlings",
+    "seed",
+    "vegetable",
+    "vegetables",
+    "acorn",
+    "fruit",
+    "orchid",
+    "orchids",
+    "rose",
+    "roses",
+    "sunflower",
+    "caladium",
+    "sunflowers",
+    "aloevera",
+    "bloomscape",
+    "thesill",
+    "alocasia",
+    "peperomia",
+    "monstera",
+    "greenhouse",
+    "sansevieria",
+    "feey",
+    "begonia",
+    "dracaena",
+    "croton",
+    "anthurium",
+    "fern",
+    "zinnia",
+    "syngonium",
+    "violets",
+    "tulips",
+    "thistle",
+    "lithops",
+    "tulips",
+    "coleus",
+    "ficus",
+    "calathea",
+  ];
 
   const facts = [
     'Plant are pretty fuckin cool.',
@@ -214,21 +200,20 @@ client.on('message', async (message) => {
     } else if (CMD_NAME === 'pic') {
       if (args.length === 0) return message.reply('Please provide a search term');
       const image = args[0];
-      // const randomNum = Math.floor(Math.random() * images.length);
-      // const image = images[randomNum];
       const embed = {
         "image": {
           "url": `https://source.unsplash.com/random/?${image}`,
         }
       };
-
-      // const randomNum = Math.floor(Math.random() * images.length);
-      // const image = images[randomNum];
-      // const embed = {
-      //   "image": {
-      //     "url": `https://source.unsplash.com/random/?${image}`,
-      //   }
-      // };
+      message.channel.send({ embed });
+    } else if (CMD_NAME === 'plantpic') {
+      const randomNum = Math.floor(Math.random() * images.length);
+      const image = images[randomNum];
+      const embed = {
+        "image": {
+          "url": `https://source.unsplash.com/random/?${image}`,
+        }
+      };
       message.channel.send({ embed });
     }
   }
