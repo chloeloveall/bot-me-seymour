@@ -35,72 +35,72 @@ client.on('message', async (message) => {
   //   "https://source.unsplash.com/random/?succulent",
   // ];
 
-  const images = [
-    "houseplant",
-    "houseplants",
-    "plants",
-    "succulent",
-    "philodendron",
-    "forest",
-    "tree",
-    "trees",
-    "cactus",
-    "succulents",
-    "succulent",
-    "indoorplant",
-    "indoorplants",
-    "flower",
-    "blossom",
-    "flowers",
-    "blossoms",
-    "cacti",
-    "aloe",
-    "flora",
-    "spring",
-    "plantpot",
-    "sprout",
-    "garden",
-    "pottedplant",
-    "pottedplants",
-    "seedling",
-    "seedlings",
-    "seed",
-    "vegetable",
-    "vegetables",
-    "acorn",
-    "fruit",
-    "orchid",
-    "orchids",
-    "rose",
-    "roses",
-    "sunflower",
-    "caladium",
-    "sunflowers",
-    "aloevera",
-    "bloomscape",
-    "thesill",
-    "alocasia",
-    "peperomia",
-    "monstera",
-    "greenhouse",
-    "sansevieria",
-    "feey",
-    "begonia",
-    "dracaena",
-    "croton",
-    "anthurium",
-    "fern",
-    "zinnia",
-    "syngonium",
-    "violets",
-    "tulips",
-    "thistle",
-    "lithops",
-    "tulips",
-    "coleus",
-    "ficus",
-    "calathea",
-  ];
+  // const images = [
+  //   "houseplant",
+  //   "houseplants",
+  //   "plants",
+  //   "succulent",
+  //   "philodendron",
+  //   "forest",
+  //   "tree",
+  //   "trees",
+  //   "cactus",
+  //   "succulents",
+  //   "succulent",
+  //   "indoorplant",
+  //   "indoorplants",
+  //   "flower",
+  //   "blossom",
+  //   "flowers",
+  //   "blossoms",
+  //   "cacti",
+  //   "aloe",
+  //   "flora",
+  //   "spring",
+  //   "plantpot",
+  //   "sprout",
+  //   "garden",
+  //   "pottedplant",
+  //   "pottedplants",
+  //   "seedling",
+  //   "seedlings",
+  //   "seed",
+  //   "vegetable",
+  //   "vegetables",
+  //   "acorn",
+  //   "fruit",
+  //   "orchid",
+  //   "orchids",
+  //   "rose",
+  //   "roses",
+  //   "sunflower",
+  //   "caladium",
+  //   "sunflowers",
+  //   "aloevera",
+  //   "bloomscape",
+  //   "thesill",
+  //   "alocasia",
+  //   "peperomia",
+  //   "monstera",
+  //   "greenhouse",
+  //   "sansevieria",
+  //   "feey",
+  //   "begonia",
+  //   "dracaena",
+  //   "croton",
+  //   "anthurium",
+  //   "fern",
+  //   "zinnia",
+  //   "syngonium",
+  //   "violets",
+  //   "tulips",
+  //   "thistle",
+  //   "lithops",
+  //   "tulips",
+  //   "coleus",
+  //   "ficus",
+  //   "calathea",
+  // ];
 
   const facts = [
     'Plant are pretty fuckin cool.',
@@ -212,13 +212,23 @@ client.on('message', async (message) => {
       const fact = facts[randomNum];
       return message.channel.send(fact);
     } else if (CMD_NAME === 'pic') {
-      const randomNum = Math.floor(Math.random() * images.length);
-      const image = images[randomNum];
+      if (args.length === 0) return message.reply('Please provide a search term');
+      const image = message.get(args[0]);
+      // const randomNum = Math.floor(Math.random() * images.length);
+      // const image = images[randomNum];
       const embed = {
         "image": {
           "url": `https://source.unsplash.com/random/?${image}`,
         }
       };
+
+      // const randomNum = Math.floor(Math.random() * images.length);
+      // const image = images[randomNum];
+      // const embed = {
+      //   "image": {
+      //     "url": `https://source.unsplash.com/random/?${image}`,
+      //   }
+      // };
       message.channel.send({ embed });
     }
   }
