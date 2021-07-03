@@ -21,8 +21,6 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
-  const randomNum = Math.floor(Math.random() * facts.length);
-  
   const images = [
     "https://source.unsplash.com/random/?houseplant",
     "https://source.unsplash.com/random/?houseplants",
@@ -143,14 +141,16 @@ client.on('message', async (message) => {
       const msg = args.join(' ');
       webhookClient.send(msg);
     } else if (CMD_NAME === 'fact') {
-      // const randomNum = Math.floor(Math.random() * facts.length);
+      const randomNum = Math.floor(Math.random() * facts.length);
       const fact = facts[randomNum];
       return message.channel.send(fact);
     } else if (CMD_NAME === 'pic') {
-      let imgUrl = images[randomNum];
+      const randomNum = Math.floor(Math.random() * images.length);
+      const image = images[randomNum];
       const embed = {
         "image": {
-          "url": `${imgUrl}`
+          // "url": "https://source.unsplash.com/random/?houseplant"
+          "url": `${image}`
         }
       };
       message.channel.send({ embed });
