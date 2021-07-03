@@ -218,7 +218,7 @@ client.on('message', async (message) => {
     } else if (CMD_NAME === 'help') {
       const embed = {
         "title": "List of available Bot Me, Seymour! commands:",
-        "description": "```\n$kick + space + member ID: kicks selected member from the server (this command is only available to admins) \n$ban + + space + member ID: bans selected member from the server (this command is only available to admins) \n$pic + space + search term: searches for an image that matches the search term \n$plantpic: generates a random plant image \n$fact: generates a random plant fact \n$announce + space + message: announces the message ```"
+        "description": "```\n$kick + space + member ID: kicks selected member from the server (this command is only available to admins) \n \n$ban + + space + member ID: bans selected member from the server (this command is only available to admins) \n \n$pic + space + search term: searches for an image that matches the search term \n \n$plantpic: generates a random plant image \n \n$fact: generates a random plant fact \n \n$announce + space + message: announces the message ```"
       };
       // const embed = {
       //   "content": "$kick + space + member ID: kicks selected member from the server (this command is only available to admins)",
