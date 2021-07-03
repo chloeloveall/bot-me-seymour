@@ -228,7 +228,7 @@ client.on('message', async (message) => {
       //   "content": "$fact: generates a random plant fact",
       //   "content": "$announce + space + message: announces the message"
       // };
-      // message.channel.send({ embed });
+      message.channel.send({ embed });
     } 
   }
 });
