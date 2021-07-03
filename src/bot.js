@@ -21,18 +21,32 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
+  // const images = [
+  //   "https://source.unsplash.com/random/?houseplant",
+  //   "https://source.unsplash.com/random/?houseplants",
+  //   "https://source.unsplash.com/random/?plants",
+  //   "https://source.unsplash.com/random/?succulent",
+  //   "https://source.unsplash.com/random/?philodendron",
+  //   "https://source.unsplash.com/random/?forest",
+  //   "https://source.unsplash.com/random/?tree",
+  //   "https://source.unsplash.com/random/?trees",
+  //   "https://source.unsplash.com/random/?cactus",
+  //   "https://source.unsplash.com/random/?succulents",
+  //   "https://source.unsplash.com/random/?succulent",
+  // ];
+
   const images = [
-    "https://source.unsplash.com/random/?houseplant",
-    "https://source.unsplash.com/random/?houseplants",
-    "https://source.unsplash.com/random/?plants",
-    "https://source.unsplash.com/random/?succulent",
-    "https://source.unsplash.com/random/?philodendron",
-    "https://source.unsplash.com/random/?forest",
-    "https://source.unsplash.com/random/?tree",
-    "https://source.unsplash.com/random/?trees",
-    "https://source.unsplash.com/random/?cactus",
-    "https://source.unsplash.com/random/?succulents",
-    "https://source.unsplash.com/random/?succulent",
+    "houseplant",
+    "houseplants",
+    "plants",
+    "succulent",
+    "philodendron",
+    "forest",
+    "tree",
+    "trees",
+    "cactus",
+    "succulents",
+    "succulent",
   ];
 
   const facts = [
@@ -149,8 +163,7 @@ client.on('message', async (message) => {
       const image = images[randomNum];
       const embed = {
         "image": {
-          // "url": "https://source.unsplash.com/random/?houseplant"
-          "url": `${image}`
+          "url": `https://source.unsplash.com/random/?${image}`,
         }
       };
       message.channel.send({ embed });
