@@ -89,6 +89,11 @@ client.on('message', async (message) => {
     'Older Douglas Fir trees can transport their extra food to younger trees through mycelia, a type of fungus plants use to communicate and share resources with each other.',
   ];
 
+  const exampleEmbed = client.MessageEmbed()
+    .setTitle('Some title')
+    .attachFiles(['../assets/images/bot-icon.jpg'])
+    .setImage('attachment://dbot-icon.jpg');
+
   if (message.author.bot) return;
   if (message.content.startsWith(PREFIX)) {
     const [CMD_NAME, ...args] = message.content
@@ -131,51 +136,13 @@ client.on('message', async (message) => {
       const fact = facts[randomNum];
       return message.channel.send(fact);
     } else if (CMD_NAME === 'pic') {
-      const exampleEmbed = new Discord.MessageEmbed()
-        .setColor('#0099ff')
-        .setTitle('Some title')
-        .setURL('https://discord.js.org/')
-        .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-        .setDescription('Some description here')
-        .setThumbnail('https://i.imgur.com/wSTFkRM.png')
-        .addFields(
-          { name: 'Regular field title', value: 'Some value here' },
-          { name: '\u200B', value: '\u200B' },
-          { name: 'Inline field title', value: 'Some value here', inline: true },
-          { name: 'Inline field title', value: 'Some value here', inline: true },
-        )
-        .addField('Inline field title', 'Some value here', true)
-        .setImage('https://i.imgur.com/wSTFkRM.png')
-        .setTimestamp()
-        .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-
-      channel.send(exampleEmbed);
+      message.channel.send(exampleEmbed);
       // const randomNum = Math.floor(Math.random() * facts.length);
       // const fact = facts[randomNum];
       // return message.channel.send(fact);
     } 
   }
 });
-
-const exampleEmbed = new Discord.MessageEmbed()
-	.setColor('#0099ff')
-	.setTitle('Some title')
-	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-	.setDescription('Some description here')
-	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
-	.addFields(
-		{ name: 'Regular field title', value: 'Some value here' },
-		{ name: '\u200B', value: '\u200B' },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
-	)
-	.addField('Inline field title', 'Some value here', true)
-	.setImage('https://i.imgur.com/wSTFkRM.png')
-	.setTimestamp()
-	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-
-channel.send(exampleEmbed);
 
 // new event to listen for adding roles
 client.on('messageReactionAdd', (reaction, user) => {
