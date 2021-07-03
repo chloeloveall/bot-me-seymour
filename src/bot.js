@@ -218,12 +218,12 @@ client.on('message', async (message) => {
     } else if (CMD_NAME === 'help') {
       const embed = {
         "title": "List of available Bot Me, Seymour! commands:",
-        "kick": "$kick + space + member ID: kicks selected member from the server (this command is only available to admins)",
-        "ban": "$ban + + space + member ID: bans selected member from the server (this command is only available to admins)",
-        "pic": "$pic + space + search term: searches for an image that matches the search term",
-        "plantpic": "$plantpic: generates a random plant image",
-        "fact": "$fact: generates a random plant fact",
-        "announce": "$announce + space + message: announces the message"
+        "value": "$kick + space + member ID: kicks selected member from the server (this command is only available to admins)",
+        "value": "$ban + + space + member ID: bans selected member from the server (this command is only available to admins)",
+        "value": "$pic + space + search term: searches for an image that matches the search term",
+        "value": "$plantpic: generates a random plant image",
+        "value": "$fact: generates a random plant fact",
+        "value": "$announce + space + message: announces the message"
       };
       message.channel.send({ embed });
     } 
