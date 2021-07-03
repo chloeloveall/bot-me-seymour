@@ -21,6 +21,14 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
+  const file = client.MessageAttachment('../assets/images/bot-icon.jpg');
+  const exampleEmbed = {
+	title: 'Some title',
+	image: {
+		url: 'attachment://bot-icon.jpg',
+	},
+};
+
   const facts = [
     'Plant are pretty fuckin cool.',
     'Most carnivorous plants are found in areas with low soil nutrition.',
@@ -130,6 +138,8 @@ client.on('message', async (message) => {
       const randomNum = Math.floor(Math.random() * facts.length);
       const fact = facts[randomNum];
       return message.channel.send(fact);
+    } else if (CMD_NAME === 'pic') {
+      message.channel.send({ files: [file], embed: exampleEmbed });
     }
   }
 });
